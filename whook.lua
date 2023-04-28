@@ -1,3 +1,16 @@
+--// anti http spy
+local hook = hookfunction or hookfunc or replace_closure
+local hookies = {}
+if hook then
+pcall(function() -- fuck compatability me and my homies hate compatibility
+    hookies[1] = hook(print,function(...)if(tostring(...):match("api/webhooks")) then print("Nxll Blocked You For Http Spy-ing")return ""end return hookies[1](...)end)
+    hookies[2] = hook(warn,function(...)if(tostring(...):match("api/webhooks")) then print("Nxll Blocked You For Http Spy-ing")return ""end return hookies[2](...)end)
+    hookies[3] = hook(appendfile,function(...)if(tostring(...):match("api/webhooks")) then print("Nxll Blocked You For Http Spy-ing")return ""end return hookies[3](...)end)
+    hookies[4] = hook(writefile,function(...)if(tostring(...):match("api/webhooks")) then print("Nxll Blocked You For Http Spy-ing")return ""end return hookies[4](...)end)
+    hookies[5] = hook(rconsoleprint,function(...)if(tostring(...):match("api/webhooks")) then print("Nxll Blocked You For Http Spy-ing")return ""end return hookies[5](...)end)
+end)
+end
+
 --// Executor detector
 local executor = identifyexecutor()
  
